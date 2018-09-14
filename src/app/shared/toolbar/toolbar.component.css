@@ -1,0 +1,10 @@
+.toolbar {
+	height: 60px;
+    background: darkslategray;
+    color: white;
+    font-weight: bold;
+}
+.cool-btn{
+    float:right;
+    margin-top:1vh;
+}
