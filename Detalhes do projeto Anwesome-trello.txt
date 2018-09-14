@@ -1,0 +1,8 @@
+Modelagem do client: Angularsome Trello.
+
+Components:
+Board { name: string, [activity-list]}
+ [has many ativity-list]:
+     Activity-list {name: string ,[ativity]}
+         [has many activitys]:
+                Activity {title: string , description: string}
