@@ -17,18 +17,27 @@
       background:transparent; 
     } 
   }
-  .card-list {
+  .card {
     display: flex;
+    background-color: #DCDCDC;
   }
   
-  .card-item {
+  .card-body {
     flex: 1;
     border-radius: 1px solid #c8ced3;
-    background-color: #2eadd3;
+    background-color: #DCDCDC;
     border-radius: 0.25rem;
-    color: #fff;
+    color: #000000;
   }
   
   .text-value {
     font-size: 28px;
   }
+  .list-header-target {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
