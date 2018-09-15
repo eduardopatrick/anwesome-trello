@@ -3,7 +3,7 @@ import { NgModule, Component } from '@angular/core';
 
 
 @Component({
-    selector: 'app-toolbar',
+    selector: 'at-toolbar',
     templateUrl: './toolbar.component.html',
     styleUrls: ['./toolbar.component.css']
   })

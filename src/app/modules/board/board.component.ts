@@ -7,7 +7,7 @@ import { ToolbarComponent } from '../../shared/toolbar/toolbar.component';
 
 
 @Component({
-  selector: 'app-board',
+  selector: 'at-board',
   templateUrl: './board.component.html',
   styleUrls: ['./board.component.css']
 })
