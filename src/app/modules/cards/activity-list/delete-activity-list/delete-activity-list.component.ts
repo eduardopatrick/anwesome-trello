@@ -1,9 +1,9 @@
 import { Component, ViewChild, NgModule } from '@angular/core';
 
-import { ActivityComponent } from '../../../modules/items/activity/activity.component';
+
 import { SweetAlert2Module } from '@toverux/ngx-sweetalert2';
 import swal from 'sweetalert2';
-
+import { ActivityListComponent } from '../activity-list.component';
 
 @NgModule({
     imports:[
@@ -12,18 +12,18 @@ import swal from 'sweetalert2';
 })
 
 @Component({
-    selector:'at-button-delete-activity',
-    templateUrl: './delete-activity.component.html',
-    styleUrls: ['./delete-activity.component.scss']
+    selector:'at-delete-activity-list',
+    templateUrl: '/delete-activity-list.component.html',
+    styleUrls: ['/delete-activity-list.component.scss']
     
 })
 
-export class DeleteActivity {
-    @ViewChild('deleteSwal') private deleteSwal: ActivityComponent;
+export class DeleteActivityList {
+    @ViewChild('deleteSwal') private deleteSwal: ActivityListComponent;
 
-    private delete(){
+    private deleteActivityList(){
         swal({
-            title: 'Deseja APAGAR esta Atividade?',
+            title: 'Deseja APAGAR toda a Lista de Atividades?',
             text: "As mudanças são IRREVERSÍVEIS!",
             type: 'warning',
             showCancelButton: true,
@@ -35,7 +35,7 @@ export class DeleteActivity {
             if (result.value) {
               swal(
                 'Apagado!',
-                'Tchau Tchau Atividade.',
+                'Tchau Tchau Lista.',
                 'success'
               )
             }

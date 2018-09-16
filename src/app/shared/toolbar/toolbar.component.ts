@@ -5,7 +5,7 @@ import { NgModule, Component } from '@angular/core';
 @Component({
     selector: 'at-toolbar',
     templateUrl: './toolbar.component.html',
-    styleUrls: ['./toolbar.component.css']
+    styleUrls: ['./toolbar.component.scss']
   })
 
 @NgModule({
@@ -14,5 +14,5 @@ import { NgModule, Component } from '@angular/core';
 
 
 export class ToolbarComponent  {
-
+  title = 'Anwesome Trello';
  }

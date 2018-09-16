@@ -9,6 +9,9 @@ import { ToolbarComponent } from './shared/toolbar/toolbar.component';
 import { SweetAlert2Module } from '@toverux/ngx-sweetalert2';
 import { NewActivity } from './shared/buttons/new-activity/new-activity.component';
 import { DeleteActivity } from './shared/buttons/delete-activity/delete-activity.component';
+import { NewActivityList } from './shared/buttons/new-activity-list/new-activity-list.component';
+import { NewBoard } from './modules/board/new-board/new-board.component';
+import { DeleteActivityList } from './modules/cards/activity-list/delete-activity-list/delete-activity-list.component';
 
 
 @NgModule({
@@ -19,16 +22,14 @@ import { DeleteActivity } from './shared/buttons/delete-activity/delete-activity
     ActivityComponent,
     ToolbarComponent,
     NewActivity,
-    DeleteActivity
+    DeleteActivity,
+    DeleteActivityList,
+    NewActivityList,
+    NewBoard
   ],
   imports: [
     BrowserModule,
-    SweetAlert2Module.forRoot({
-      buttonsStyling: false,
-      customClass: 'modal-content',
-      confirmButtonClass: 'btn btn-primary',
-      cancelButtonClass: 'btn'
-  })
+    SweetAlert2Module.forRoot()
 ],
 
   providers: [],
