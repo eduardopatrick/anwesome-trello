@@ -1,4 +1,4 @@
-import { Component, OnInit, NgModule, ViewChild } from '@angular/core';
+import { Component, OnInit, NgModule } from '@angular/core';
 
 import { DragulaModule} from 'ng2-dragula';
 import { ToolbarComponent } from '../../shared/toolbar/toolbar.component';
@@ -9,7 +9,7 @@ import { ToolbarComponent } from '../../shared/toolbar/toolbar.component';
 @Component({
   selector: 'at-board',
   templateUrl: './board.component.html',
-  styleUrls: ['./board.component.css']
+  styleUrls: ['./board.component.scss']
 })
 
 @NgModule({

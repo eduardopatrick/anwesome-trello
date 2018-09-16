@@ -1,78 +1,39 @@
-<!-- <div id="board­-page">
-  <div  class="list">
-    <input class="list­-name" />
-    <div class="list­-content">
-      <div class="ticket">
-        <input class="ticket­-title" />
-      </div>
-    </div>
-    <button class="add­-ticket"> Add Ativity-list </button>
-  </div>
-</div> -->
-<!-- ng­-repeat="list in lists" ng­-model="list.name"
-ng­-repeat="ticket in list.tickets" 
-ng­-model="ticket.title" -->
-<!-- <div  class="board-page">
-  <div class="modal-dialog modal-sm">
-      <div class="modal-content">
-          <div class="modal-header">
-              <h4 class="modal-title">This project is built using <strong>Angular 2</strong></h4>
-          </div>
-          <div class="modal-body">
-              <div class="list-group">
-                  <a href="#" class="list-group-item active">
-            UI Dependencies
-        </a>
-                  <a target="_blank" href="https://github.com/valor-software/ng2-bootstrap" class="list-group-item">ng2-bootstrap</a>
-                  <a target="_blank" 	href="https://github.com/valor-software/ng2-dragula" class="list-group-item">ng2-dragula</a>
-              </div>
 
-              <div class="alert alert-danger" role="alert">
-                  This App has <strong>no Login</strong> so all the data will be <strong>erased after 1 hour.</strong>.
-              </div>
-          </div>
-          <div class="modal-footer">
-              <button type="button" class="btn btn-default">Close</button>
-          </div>
-      </div>
-  </div>
-</div> -->
-<div class="row">
-  <div class="col">
-    <div class="card">
-      <div class="card-body"><at-button-delete-activity></at-button-delete-activity>
-        <h5 class="card-title">To do</h5>
-        <div dragula="DRAGULA_FACTS">
-          <div>...</div>
-          <div>...</div>
+<div class="container mt-4">
+
+<div id="kaban">
+  <div id="scroller">
+    <div id="boards">
+      
+      <div class="board" id="board1">
+        <header>To do <at-delete-activity-list></at-delete-activity-list></header>
+        <div class="cards" id="b1">
+          <div class="card"><span class="cardtitle noselect">A great card #1 <at-button-delete-activity></at-button-delete-activity></span></div>
+          <div class="card"><span class="cardtitle noselect">A great card #2 <at-button-delete-activity></at-button-delete-activity></span></div>
+          <div class="card"><span class="cardtitle noselect">A great card #3 <at-button-delete-activity></at-button-delete-activity></span></div>
+          <div class="card"><span class="cardtitle noselect">A great card #4 <at-button-delete-activity></at-button-delete-activity></span></div>
+          <at-new-activity></at-new-activity>
         </div>
       </div>
-      <at-button-new-activity></at-button-new-activity>
-    </div>
-  </div>
-  <div class="col">
-    <div class="card">
-      <div class="card-body"><at-button-delete-activity></at-button-delete-activity>
-        <h5 class="card-title">Doing</h5>
-        <div dragula="DRAGULA_FACTS">
-          <div>...</div>
-          <div>...</div>
+      
+      <div class="board" id="board2">
+        <header>Doing <at-delete-activity-list></at-delete-activity-list></header>
+        <div class="cards" id="b2">
+          <div class="card"><span class="cardtitle">A great card #5<at-button-delete-activity></at-button-delete-activity></span></div>
+          <at-new-activity></at-new-activity>
         </div>
       </div>
-      <at-button-new-activity></at-button-new-activity>
-    </div>
-  </div>
-  <div class="col">
-    <div class="card">
-      <div class="card-body"><at-button-delete-activity></at-button-delete-activity>
-        <h5 class="card-title">Done</h5>
-        <div dragula="DRAGULA_FACTS">
-          <div>...</div>
-          <div>...</div>
+      
+      <div class="board" id="board3">
+        <header>Done <at-delete-activity-list></at-delete-activity-list></header>
+        <div class="cards" id="b3">
+          <div class="card"><span class="cardtitle noselect">A great card #5<at-button-delete-activity></at-button-delete-activity></span></div>
+          <at-new-activity></at-new-activity>
         </div>
-       
       </div>
-      <at-button-new-activity></at-button-new-activity>
+  
     </div>
   </div>
+</div>
+
 </div>
