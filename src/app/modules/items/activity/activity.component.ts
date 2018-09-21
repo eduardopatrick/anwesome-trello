@@ -39,7 +39,9 @@ constructor(
 
   ngOnInit() {
     this.getActivitysByCardId();
-    // this.activitys = this.activityService.getAll();
+    this.newActivity = new Activity();
+    this.selectedActivity = new Activity();
+    this.activityService.getAll().subscribe( activitys => this.activitys = activitys);
   }
   public setShowCreateForm(value: boolean): void {
     this.showCreateForm = value;

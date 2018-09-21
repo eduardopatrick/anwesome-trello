@@ -36,6 +36,7 @@ export class BoardComponent implements OnInit {
 
     ngOnInit(): void {
       this.newBoard = new Board();
+      this.selectedBoard = new Board();
       this.getAllBoards();
       // this.boards = this.boardService.getAll();
        }
