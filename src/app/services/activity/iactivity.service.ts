@@ -1,5 +1,5 @@
-import { Activity } from "../../models/activity";
-import { Observable } from "rxjs";
+import { Activity } from '../../models/activity';
+import { Observable } from 'rxjs';
 
 
 export interface IActivityService {

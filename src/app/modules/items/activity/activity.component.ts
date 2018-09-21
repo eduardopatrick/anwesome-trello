@@ -9,6 +9,7 @@ import { Activity } from '../../../models/activity';
 
 
 @Component({
+  // tslint:disable-next-line:component-selector
   selector: 'at-activity',
   templateUrl: './activity.component.html',
   styleUrls: ['./activity.component.scss'],
@@ -17,8 +18,8 @@ import { Activity } from '../../../models/activity';
 
 
 @NgModule({
-  imports:[
-    DragulaModule,
+  imports: [
+    DragulaModule
   ]
 })
 
@@ -49,8 +50,9 @@ constructor(
   }
 
   private createActivity(): void {
-    if(this.activitys.length !== 0)
+    if (this.activitys.length !== 0) {
       this.newActivity.order = this.activitys[this.activitys.length - 1].order + 1;
+    }
     this.activityService.create(this.newActivity).subscribe(
       x => {
         this.activitys.push(x);
@@ -72,8 +74,8 @@ constructor(
 
   private sortActivitysByOrder(activitys: Activity[]): Activity[] {
     activitys.sort((a, b) => {  // para organizar as atividades por ordem de criação logo,
-      return a.order - b.order; // a que tiver o menor valor de ordem ficará mais acima. 
-    });                         
+      return a.order - b.order; // a que tiver o menor valor de ordem ficará mais acima.
+    });
     return activitys;
   }
 

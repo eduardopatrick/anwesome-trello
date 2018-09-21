@@ -6,11 +6,11 @@
             Possui uma chamada de diretiva do form para criar
              uma nova board e impede que o valor enviado como 
              atributo title da mesma seja enviado em branco] -->
-        <form (ngSubmit)="createBoard(); boardCreateForm.reset();" #newBoardForm="ngForm" class="form-inline ml-4">
+        <form (ngSubmit)="createBoard();" #newBoardForm="ngForm" class="form-inline ml-4">
             <div class="form-group">
                 <input type="text" name="title" [(ngModel)]="newBoard.title" #title="ngModel" placeholder="Digite um Nome" required>
             </div>
-            <button type="submit" [disabled]="!newBoardForm.form.valid" class="btn btn-new-board btn-sm ml-3">Criar
+            <button type="submit" [disabled]="!newBoardForm.valid" class="btn btn-new-board btn-sm ml-3">Criar
                 Nova Board</button>
         </form>
     </div>
@@ -42,7 +42,7 @@
                             <input type="text" name="title" [(ngModel)]="selectedBoard.title" placeholder="Board title"
                                 required>
                         </div>
-                        <button type="submit" [disabled]="!boardUpdateForm.form.valid" class="btn btn-success">Update</button>
+                        <button type="submit" [disabled]="!boardUpdateForm.valid" class="btn btn-success">Update</button>
                     </form>
 
                 </ng-template>

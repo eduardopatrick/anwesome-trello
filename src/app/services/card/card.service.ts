@@ -4,7 +4,7 @@ import { Http, Headers, RequestOptions } from '@angular/http';
 
 // Rxjs imports
 import { Observable } from 'rxjs';
-import { map } from "rxjs/operators";
+import { map } from 'rxjs/operators';
 
 // Custom import types
 import { Card } from '../../models/card';
@@ -13,25 +13,25 @@ import { CARDS } from './card-mock';
 
 // Service
 @Injectable()
-export class CardService implements ICardService{
-    
-    // Properties
-    private url: string = "http://localhost:3000/cards";
+export class CardService implements ICardService {
 
-    // Constructor
+
+    private url = 'http://localhost:3000/cards';
+
+
     constructor(private http: Http) { }
 
-    Methods
+
     create(card: Card): Observable<Card> {
-        var data = JSON.stringify(card);
+        const data = JSON.stringify(card);
         return this.http.post(
-            this.url, data, 
+            this.url, data,
             this.getHeaderOption())
             .pipe(map(response => response.json()));
     }
 
     getAllByBoardId(boardId: number): Observable<Card[]> {
-        return this.http.get(this.url + "/card/" + boardId).pipe(map(response => response.json()));
+        return this.http.get(this.url + '/card/' + boardId).pipe(map(response => response.json()));
     }
 
     getAll(): Observable<Card[]> {
@@ -40,20 +40,20 @@ export class CardService implements ICardService{
     }
 
     get(id: number): Observable<Card> {
-        return this.http.get(this.url + "/" + id).pipe(map(response => response.json()));
+        return this.http.get(this.url + '/' + id).pipe(map(response => response.json()));
     }
 
     update(card: Card): Observable<Card> {
-      var data = JSON.stringify(card);
-        return this.http.post(this.url + "/" + card.id, data, this.getHeaderOption()).pipe(map(response => response.json()));
+      const data = JSON.stringify(card);
+        return this.http.post(this.url + '/' + card.id, data, this.getHeaderOption()).pipe(map(response => response.json()));
     }
 
     delete(id: number): Observable<Card> {
-         return this.http.post(this.url + "/delete/" + id, this.getHeaderOption()).pipe(map(response => response.json()));
+         return this.http.post(this.url + '/delete/' + id, this.getHeaderOption()).pipe(map(response => response.json()));
     }
 
     private getHeaderOption(): RequestOptions {
-        let headers = new Headers({ 'Content-Type': 'application/json' });
+        const headers = new Headers({ 'Content-Type': 'application/json' });
         return new RequestOptions({ headers: headers });
     }
 }

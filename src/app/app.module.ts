@@ -12,7 +12,7 @@ import { AppComponent } from './app.component';
 import { BoardComponent } from './modules/board/board.component';
 import { CardComponent } from './modules/card/card.component';
 import { ActivityComponent } from './modules/items/activity/activity.component';;
-import { RoutingModule } from './routing/routing.module';
+import { RoutingModule } from './routes/routing.module';
 
 
 

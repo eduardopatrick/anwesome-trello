@@ -12,20 +12,19 @@ import { ACTIVITYS} from './activity-mock';
 
 @Injectable()
 export class ActivityService implements IActivityService {
-  
-   
-    private url: string = "http://localhost:3000/activitys";
 
-   
+
+    private url = 'http://localhost:3000/activitys';
+
     constructor(private http: Http) { }
 
     create(activity: Activity): Observable<Activity> {
-        var data = JSON.stringify(activity);
+        const data = JSON.stringify(activity);
         return this.http.post(this.url, data, this.getHeaderOption()).pipe(map(response => response.json()));
     }
 
     getAllByCardId(cardId: number): Observable<Activity[]> {
-        return this.http.get(this.url + "/cards/" + cardId).pipe(map(response => response.json()));
+        return this.http.get(this.url + '/cards/' + cardId).pipe(map(response => response.json()));
     }
 
     getAll(): Observable<Activity[]> {
@@ -34,21 +33,20 @@ export class ActivityService implements IActivityService {
     }
 
     get(id: number): Observable<Activity> {
-        return this.http.get(this.url + "/" + id).pipe(map(response => response.json()));
+        return this.http.get(this.url + '/' + id).pipe(map(response => response.json()));
     }
-    
 
     update(activity: Activity): Observable<Activity> {
-      var data = JSON.stringify(activity);
-        return this.http.post(this.url + "/" + activity.id, data, this.getHeaderOption()).pipe(map(response => response.json()));
+      const data = JSON.stringify(activity);
+        return this.http.post(this.url + '/' + activity.id, data, this.getHeaderOption()).pipe(map(response => response.json()));
     }
 
     delete(id: number): Observable<Activity> {
-         return this.http.post(this.url + "/delete/" + id, this.getHeaderOption()).pipe(map(response => response.json()));
+         return this.http.post(this.url + '/delete/' + id, this.getHeaderOption()).pipe(map(response => response.json()));
     }
 
     private getHeaderOption(): RequestOptions {
-        let headers = new Headers({ 'Content-Type': 'application/json' });
+        const headers = new Headers({ 'Content-Type': 'application/json' });
         return new RequestOptions({ headers: headers });
     }
 }

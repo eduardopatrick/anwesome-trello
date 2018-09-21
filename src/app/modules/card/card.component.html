@@ -1,46 +1,45 @@
-
 <div class="row" id="card-component">
+  <div class="row col-12 mb-3">
 
-  <div *ngIf="board === undefined; else showBoard"></div>
-  <ng-template #showBoard>
-    <h2>{{ board.title }}</h2>
-  </ng-template>
+    <div *ngIf="board === undefined; else showBoard"></div>
+    <ng-template #showBoard>
+      <h2>{{ board.title }}</h2>
+    </ng-template>
 
-  <!-- Form para Novo Card -->
-  <form (ngSubmit)="createCard(); cardCreateForm.reset();" #cardCreateForm="ngForm" class="form-inline ml-4">
+    <!-- Form para Novo Card -->
+    <form (ngSubmit)="createCard()" #cardCreateForm="ngForm" class="form-inline ml-4">
 
-    <!-- dando um nome ao  atributo name do card -->
-    <div class="form-group">
-      <input type="text" name="name" [(ngModel)]="newCard.name" #name="ngModel" placeholder="Digite um Nome" required>
-    </div>
-    
-    <button type="submit" [disabled]="!newCardForm.form.valid" class="btn btn-new-card btn-sm ml-3">Criar</button>
-  </form>
+      <!-- dando um nome ao  atributo name do card -->
+      <div class="form-group">
+        <input type="text" name="name" [(ngModel)]="newCard.name" #name="ngModel" placeholder="Digite um Nome" required>
+      </div>
 
-
+      <button type="submit" [disabled]="!cardCreateForm.valid" class="btn btn-new-card btn-sm ml-3">Criar</button>
+    </form>
+  </div>
 </div>
 
 <div class="row" class="col-12">
-  <div class="card-cards">
+  <div class="card-columns">
 
     <div *ngIf="cards === undefined; else showCards"></div>
     <ng-template #showCards>
 
-      
-      <div>
+
+    
         <div *ngFor="let card of cards" [attr.data-cardid]=card.id>
 
-          <div class="card">
+          <div class="card color-cards ">
 
             <div *ngIf="selectedCard === undefined || selectedCard.id !== card.id; else showUpdateForm">
 
               <h4 class="card-title">
-                <label (click)="selectCard(card)" for="name">{{ card.name }}</label>
-
-                <i class="fa fa-trash text-danger" aria-hidden="true" (click)="deleteCard(card)"></i>
+                <label (click)="selectCard(card)" for="name">{{ card.name }}&nbsp;</label>
+                <i class="fa fa-pencil btn-outline-info" aria-hidden="true" (click)="selectCard(card)"></i>
+                <i class="fa fa-trash btn-outline-danger" aria-hidden="true" (click)="deleteCard(card)"></i>
               </h4>
 
-              <at-activity [card]="card"></at-activity>  <!-- here -->
+              <at-activity [card]="card"></at-activity> <!-- here -->
 
             </div>
           </div>
@@ -59,6 +58,7 @@
             </form>
           </ng-template>
         </div>
-      </div>
+      
     </ng-template>
   </div>
+</div>

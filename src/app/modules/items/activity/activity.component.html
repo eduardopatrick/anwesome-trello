@@ -5,7 +5,7 @@
     
             <div *ngIf="showCreateForm === true; else showCreateFormButton">
     
-                <form (ngSubmit)="createActivity(); activityCreateForm.reset();" #activityCreateForm="ngForm" class="form create-form justify-content-center">
+                <form (ngSubmit)="createActivity();" #activityCreateForm="ngForm" class="form create-form justify-content-center">
 
                     <div class="form-group">
                         <label for="title"></label>
@@ -19,7 +19,7 @@
   
                     <button type="submit" class="btn btn-info" (click)="setShowCreateForm(false);">Cancelar</button>
     
-                    <button type="submit" [disabled]="!activityCreateForm.form.valid" class="btn btn-success">Criar</button>
+                    <button type="submit" [disabled]="!activityCreateForm.valid" class="btn btn-success">Criar</button>
     
                 </form>
             </div>
@@ -37,19 +37,19 @@
     
             <div>
     
-                <div class="card card-outline-primary mt-3 activity-card-part" *ngFor="let activity of activitys" [attr.data-activityid]=activity._id>
+                <div class="card mt-3 " *ngFor="let activity of activitys" [attr.data-activityid]=activity._id>
     
                     <div *ngIf="selectedActivity === undefined || selectedActivity.id !== activity.id; else showActivityUpdateForm">
     
-                        <div class="card-title activity-card-part">
+                        <div class="card-title ">
   
-                            <h4 class="ml-2 mt-2 activity-card-part">
+                            <h4 class="ml-2 mt-2 ">
                                 {{ activity.title }}
-                                <i class="fa fa-trash text-danger activity-card-part" aria-hidden="true" (click)="deleteActivity(activity)"></i>
-                                <i class="fa fa-pencil text-info activity-card-part" aria-hidden="true" (click)="selectActivity(activity)"></i>
+                                <i class="fa fa-trash btn-danger" aria-hidden="true" (click)="deleteActivity(activity)"></i>
+                                <i class="fa fa-pencil text-danger" aria-hidden="true" (click)="selectActivity(activity)"></i>
                             </h4>
     
-                            <p class="ml-2 mt-2 activity-card-part">{{ activity.description }}</p>
+                            <p class="ml-2 mt-2 ">{{ activity.description }}</p>
     
                         </div>
                     </div>
