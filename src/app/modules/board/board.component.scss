@@ -1,26 +1,30 @@
-.lane {
-	vertical-align: top;
-	display: inline-block;
-	width: 250px;
-	background: gainsboro;
-	margin-right: 30px;
-	padding: 10px;
-	border-radius: 5px;
-	margin-left: 10px;
-	margin-right: 10px;
+#board-component {
+
+    h2,
+    h4 {
+        color: #026aa7;
+        text-shadow: 2px 2px 4px #fff;
+        font-family: 'Righteous', bold;
+    }
+    input {
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-color: #28a73d;
+        border-bottom-width: 2px;
+        outline: none;
+	}
+	.btn-new-board{
+		color: #28a73d;
+		background-color: #fff;
+		float:right;
+		font-family: 'Righteous', bold;
+    }
+      
+    
 }
 
-.lane-container {
-	display: -webkit-box;
-	padding: 15px;
-	height: 80%;
-	white-space: nowrap;
-	overflow-x: auto;
-	overflow-y: hidden;
-}
-
-.cool-btn{
-	float:right;
-	background-color: #28a745;
-	font-family: 'Righteous', bold;
-}
+.box-cards{
+    margin-top:10vh;
+    margin-left:2vh;
+  }
