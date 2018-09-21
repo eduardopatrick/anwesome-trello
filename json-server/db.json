@@ -37,51 +37,7 @@
     {
       "id": 3,
       "name": "Done",
-      "boardId": 3,
-      "order": 3
-    },
-    {
-      "id": 4
-    },
-    {
-      "name": "deed",
-      "id": 5
-    },
-    {
-      "name": "dede",
-      "id": 6
-    },
-    {
-      "name": "ded",
-      "id": 7
-    },
-    {
-      "name": "deded",
-      "id": 8
-    },
-    {
-      "name": "deedd",
-      "id": 9
-    },
-    {
-      "name": "dede",
-      "id": 10
-    },
-    {
-      "name": "dede",
-      "id": 11
-    },
-    {
-      "name": "deded",
-      "id": 12
-    },
-    {
-      "name": "deefvfvf",
-      "id": 13
-    },
-    {
-      "name": "Resultado do Processo seletivo 2018.1",
-      "id": 14
+      "boardId": 3
     }
   ],
   "activitys": [
@@ -89,22 +45,19 @@
       "id": 1,
       "title": "TASK1",
       "description": "primeira task",
-      "cardId": 1,
-      "order": 1
+      "cardId": 1
     },
     {
       "id": 2,
       "title": "TASK2",
       "description": "segunda task",
-      "cardId": 2,
-      "order": 2
+      "cardId": 2
     },
     {
       "id": 3,
       "title": "TASK3",
       "description": "terceira task",
-      "cardId": 3,
-      "order": 3
+      "cardId": 3
     }
   ]
 }

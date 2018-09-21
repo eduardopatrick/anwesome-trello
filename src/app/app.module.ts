@@ -11,7 +11,7 @@ import { SweetAlert2Module } from '@toverux/ngx-sweetalert2';
 import { AppComponent } from './app.component';
 import { BoardComponent } from './modules/board/board.component';
 import { CardComponent } from './modules/card/card.component';
-import { ActivityComponent } from './modules/items/activity/activity.component';;
+import { ActivityComponent } from './modules/items/activity/activity.component';
 import { RoutingModule } from './routes/routing.module';
 
 
@@ -33,7 +33,7 @@ import { RoutingModule } from './routes/routing.module';
     CommonModule,
     RoutingModule
 ],
-  exports:[
+  exports: [
     RouterModule
   ],
   providers: [],
