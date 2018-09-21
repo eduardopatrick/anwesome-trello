@@ -68,10 +68,11 @@ private updateBoard(): void {
   this.boardService.update(this.selectedBoard).subscribe(
       x => {
           Object.assign(
+              // tslint:disable-next-line:no-shadowed-variable
               this.boards.find(x => x.id === this.selectedBoard.id),
               this.selectedBoard // atualizando a board
           );
-          this.selectedBoard = undefined; 
+          this.selectedBoard = undefined;
       },
       error => error = <any>error
   );
@@ -83,6 +84,7 @@ private selectBoard(board: Board): void {
 
 private deleteBoard(board: Board): void {
   this.boardService.delete(board.id).subscribe(
+      // tslint:disable-next-line:no-shadowed-variable
       x => this.boards = this.boards.filter(x => x.id !== board.id),
       error => error = <any>error
   );

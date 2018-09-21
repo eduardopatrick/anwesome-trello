@@ -32,7 +32,7 @@
 
         </div>
     
-        <div *ngIf="activitys === undefined; else showActivitys"></div>
+        <div *ngIf="selectedActivity === undefined; else showActivitys"></div>
         <ng-template #showActivitys>
     
             <div>
@@ -46,7 +46,7 @@
                             <h4 class="ml-2 mt-2 ">
                                 {{ activity.title }}
                                 <i class="fa fa-trash btn-danger" aria-hidden="true" (click)="deleteActivity(activity)"></i>
-                                <i class="fa fa-pencil text-danger" aria-hidden="true" (click)="selectActivity(activity)"></i>
+                                <i class="fa fa-pencil text-danger" aria-hidden="true" (click)="selectedActivity(activity)"></i>
                             </h4>
     
                             <p class="ml-2 mt-2 ">{{ activity.description }}</p>
@@ -65,7 +65,7 @@
                                 <label for="description"></label>
                                 <textarea rows="4" cols="20" name="description" [(ngModel)]="selectedActivity.description" placeholder="Descrição" id="description"></textarea>
                             </div>
-                            <button type="submit" [disabled]="!activityUpdateForm.form.valid" class="btn btn-success">Atualizar</button>
+                            <button type="submit" [disabled]="!activityUpdateForm.valid" class="btn btn-success">Atualizar</button>
     
                         </form>
                     </ng-template>

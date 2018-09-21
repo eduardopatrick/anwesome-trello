@@ -53,18 +53,10 @@ export class CardComponent implements OnInit {
     this.getBoard();
     this.newCard = new Card();
     this.cards = [];
-    // this.cards = this.cardService.getAll();
     this.cardService.getAll().subscribe(cards => this.cards = cards);
 
   }
 
-
-  private sortCardsByOrder(cards: Card[]): Card[] {
-    cards.sort((a, b) => {      // organizando os cards por ordem de criação.
-      return a.order - b.order;
-    });
-    return cards;
-  }
 
   private createCard(): void {
     this.cardService.create(this.newCard).subscribe(
@@ -83,7 +75,7 @@ export class CardComponent implements OnInit {
   private getBoardIdFromRoute(): void {
     this.route.params.pipe(switchMap((params: Params) => this.boardId = params['id'])).subscribe();
   }
-// swithMap permite diferente de outros operadores o efeito de cancelamento //continuar
+
 
 
   private getBoard(): void {
@@ -104,6 +96,7 @@ export class CardComponent implements OnInit {
     this.cardService.update(this.selectedCard).subscribe(
       x => {
         Object.assign(
+          // tslint:disable-next-line:no-shadowed-variable
           this.cards.find(x => x.id === this.selectedCard.id), // seleciona o card pelo id
           this.selectedCard // E o atualiza
         );
@@ -116,6 +109,7 @@ export class CardComponent implements OnInit {
   private deleteCard(card: Card): void {
 
     this.cardService.delete(card.id).subscribe(
+      // tslint:disable-next-line:no-shadowed-variable
       x => this.cards = this.cards.filter(x => x.id !== card.id),
       error => error = <any>error
     );

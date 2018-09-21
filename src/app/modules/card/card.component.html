@@ -1,4 +1,4 @@
-<div class="row" id="card-component">
+<div class="row mt-4 ml-1" id="card-component">
   <div class="row col-12 mb-3">
 
     <div *ngIf="board === undefined; else showBoard"></div>
@@ -34,7 +34,7 @@
             <div *ngIf="selectedCard === undefined || selectedCard.id !== card.id; else showUpdateForm">
 
               <h4 class="card-title">
-                <label (click)="selectCard(card)" for="name">{{ card.name }}&nbsp;</label>
+                <label (click)="selectCard(card)" for="name">{{ card.name }} &nbsp;</label>
                 <i class="fa fa-pencil btn-outline-info" aria-hidden="true" (click)="selectCard(card)"></i>
                 <i class="fa fa-trash btn-outline-danger" aria-hidden="true" (click)="deleteCard(card)"></i>
               </h4>
