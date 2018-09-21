@@ -1,0 +1,74 @@
+{
+  "boards": [
+    {
+      "id": 1,
+      "title": "teste"
+    },
+    {
+      "id": 2,
+      "title": "teste2"
+    },
+    {
+      "id": 3,
+      "title": "teste3"
+    },
+    {
+      "requisicao": "inserir_usuario",
+      "usuario": {
+        "id": "3",
+        "email": "eduardo@gmail.com",
+        "idade": "52",
+        "peso": "56",
+        "altura": "1.17",
+        "serie": "5 ano"
+      },
+      "id": 4
+    }
+  ],
+  "cards": [
+    {
+      "id": 1,
+      "name": "To do",
+      "boardId": 1,
+      "order": 1
+    },
+    {
+      "id": 2,
+      "name": "Doing",
+      "boardId": 2,
+      "order": 2
+    },
+    {
+      "id": 3,
+      "name": "Done",
+      "boardId": 3,
+      "order": 3
+    },
+    {
+      "id": 4
+    }
+  ],
+  "activitys": [
+    {
+      "id": 1,
+      "title": "TASK1",
+      "description": "primeira task",
+      "cardId": 1,
+      "order": 1
+    },
+    {
+      "id": 2,
+      "title": "TASK2",
+      "description": "segunda task",
+      "cardId": 2,
+      "order": 2
+    },
+    {
+      "id": 3,
+      "title": "TASK3",
+      "description": "terceira task",
+      "cardId": 3,
+      "order": 3
+    }
+  ]
+}
