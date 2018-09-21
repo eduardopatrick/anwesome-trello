@@ -14,17 +14,19 @@
         border-bottom-width: 2px;
         outline: none;
 	}
-	.btn-new-board{
-		color: #28a73d;
-		background-color: #fff;
-		float:right;
-		font-family: 'Righteous', bold;
-    }
+	
       
     
+}
+.btn-new-board{
+    color: #28a73d;
+    background-color: #fff;
+    float:right;
+    font-family: 'Righteous', bold;
 }
 
 .box-cards{
     margin-top:10vh;
     margin-left:2vh;
+    display: inline-block;
   }

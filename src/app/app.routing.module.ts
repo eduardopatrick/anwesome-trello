@@ -6,7 +6,7 @@ import { BoardComponent } from './modules/board/board.component';
 @NgModule({
   imports: [
     RouterModule.forRoot([
-  		{ path: '/board', component: BoardComponent }
+{ path: '/board', component: BoardComponent }
     ])
   ],
   exports: [

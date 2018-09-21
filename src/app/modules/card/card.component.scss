@@ -19,7 +19,8 @@
   }
   .card-columns {
       height: 40rem;
-      overflow-x: scroll;
+      display: inline-flex;
+     
   }
   input {
       border-top: none;
@@ -50,12 +51,14 @@
       }
   }
 
-  .btn-new-card{
+  
+}
+
+.btn-new-card{
     color: #28a73d;
     background-color: #fff;
     float:right;
     font-family: 'Righteous', bold;
-}
 }
 
 
@@ -68,3 +71,9 @@
   background:#28a745;
   border-radius: 50px;
 }
+
+.color-cards{
+    background-color: rgba(0, 0, 0, 0.432);
+    color: #fff
+}
+

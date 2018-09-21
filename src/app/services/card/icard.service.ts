@@ -1,5 +1,5 @@
-import { Card } from "../../models/card";
-import { Observable } from "rxjs";
+import { Card } from '../../models/card';
+import { Observable } from 'rxjs';
 
 
 export interface ICardService {

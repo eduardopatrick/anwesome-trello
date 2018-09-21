@@ -9,6 +9,7 @@ import { Activity } from '../../../models/activity';
 
 
 @Component({
+  // tslint:disable-next-line:component-selector
   selector: 'at-activity',
   templateUrl: './activity.component.html',
   styleUrls: ['./activity.component.scss'],
@@ -17,8 +18,8 @@ import { Activity } from '../../../models/activity';
 
 
 @NgModule({
-  imports:[
-    DragulaModule,
+  imports: [
+    DragulaModule
   ]
 })
 
@@ -38,19 +39,15 @@ constructor(
 
   ngOnInit() {
     this.getActivitysByCardId();
-    this.newActivity = new Activity({
-      order: 0,
-      cardId: this.card.id
-    });
-    // this.activitys = this.activityService.getAll();
+    this.newActivity = new Activity();
+    this.selectedActivity = new Activity();
+    this.activityService.getAll().subscribe( activitys => this.activitys = activitys);
   }
   public setShowCreateForm(value: boolean): void {
     this.showCreateForm = value;
   }
 
   private createActivity(): void {
-    if(this.activitys.length !== 0)
-      this.newActivity.order = this.activitys[this.activitys.length - 1].order + 1;
     this.activityService.create(this.newActivity).subscribe(
       x => {
         this.activitys.push(x);
@@ -65,21 +62,15 @@ constructor(
   }
 
 
-  private selectActivity(activity: Activity): void {
+  private selectdActivity(activity: Activity): void {
     this.selectedActivity = activity;
   }
 
 
-  private sortActivitysByOrder(activitys: Activity[]): Activity[] {
-    activitys.sort((a, b) => {  // para organizar as atividades por ordem de criação logo,
-      return a.order - b.order; // a que tiver o menor valor de ordem ficará mais acima. 
-    });                         
-    return activitys;
-  }
 
   private getActivitysByCardId(): void {
     this.activityService.getAllByCardId(this.card.id).subscribe(
-      x => this.activitys = this.sortActivitysByOrder(x),
+      x => this.activitys = x,
       error => error = <any>error
     );
   }
@@ -95,6 +86,7 @@ constructor(
     this.activityService.update(this.selectedActivity).subscribe(
       x => {
         Object.assign(
+          // tslint:disable-next-line:no-shadowed-variable
           this.activitys.find(x => x.id === this.selectedActivity.id), // atualizando a atividade
           this.selectedActivity // retornando os valores atualizados para serem vistos pelo observador
         );
@@ -106,6 +98,7 @@ constructor(
 
   private deleteActivity(activity: Activity): void {
     this.activityService.delete(activity.id).subscribe(
+      // tslint:disable-next-line:no-shadowed-variable
       x => this.activitys = this.activitys.filter(x => x.id !== activity.id),
       error => error = <any>error
     );
