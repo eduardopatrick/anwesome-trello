@@ -1,0 +1,46 @@
+<div class="row col-12" id="board-component">
+    <div class="row col-12 mb-3 mt-4">
+
+        <h2>Boards</h2>
+        <!-- Form NOVA BOARD [ 
+            Possui uma chamada de diretiva do form para criar
+             uma nova board e impede que o valor enviado como 
+             atributo title da mesma seja enviado em branco] -->
+        <form [formGroup]="boardForm" (ngSubmit)="createBoard()" class="form-inline ml-4">
+            <div class="form-group">
+            <mat-form-field>                
+                <input matInput 
+                type="text"
+                id="title" 
+                formControlName="title"
+                placeholder="Digite um Nome">
+            </mat-form-field>
+            </div>
+            <button type="submit" (click)="onSubmit()" [disabled]="boardForm.invalid" class="btn btn-new-board btn-sm ml-3">Criar
+                Nova Board</button>
+        </form>
+    </div>
+
+    <!-- Exibição das Boards Criadas -->
+    <div class="board-cards">
+
+        <!-- boards -->
+        <div class="box-cards" *ngFor="let board of boards">
+            <div class="card-block">
+
+                <div>
+
+                    <h4 class="board-title "><a [routerLink]="['/board', board.id]">{{ board.title }}</a></h4>
+
+                    <button (click)="deleteBoard()" class="btn btn-danger">Deletar</button>
+
+                    <button (click)="updateBoard()" class="btn btn-primary">Editar</button>
+
+                </div>
+
+           
+
+            </div>
+        </div>
+    </div>
+</div>

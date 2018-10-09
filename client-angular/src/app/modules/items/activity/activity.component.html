@@ -1,0 +1,70 @@
+<div class="row col-12" id="activitys">
+
+        <div class="row col-12">
+    
+                <form [formGroup]="activityForm"  (ngSubmit)="activityForm()"  class="form create-form justify-content-center">
+
+                    <div class="form-group">
+                        <label for="title">Título</label>
+                        <input 
+                        type="text"
+                        id="title" 
+                        formControlName="title"
+                        placeholder="Nome da Task" 
+                        required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="description">Descrição</label>
+                        <textarea 
+                        rows="4" cols="20" 
+                        id="description"
+                        formControlName="description"
+                        placeholder="Descrição" ></textarea>
+                    </div>
+  
+                    <button type="submit" class="btn btn-info" >Cancelar</button>
+    
+                    <button type="submit" [disabled]="activityForm.invalid" class="btn btn-success">Criar</button>
+    
+                </form>
+
+        </div>
+    
+        <div *ngIf="selectedActivity === undefined; else showActivitys"></div>
+    
+            <div>
+    
+                <div class="card mt-3 " *ngFor="let activity of activitys" [attr.data-activityid]=activity._id>
+    
+                    <div *ngIf="selectedActivity === undefined || selectedActivity.id !== activity.id; else showActivityUpdateForm">
+    
+                        <div class="card-title ">
+  
+                            <h4 class="ml-2 mt-2 ">
+                                {{ activity.title }}
+                                <i class="fa fa-trash btn-danger mr-2 ml-3" aria-hidden="true" (click)="deleteActivity(activity)"></i>
+                                <i class="fa fa-pencil text-danger" aria-hidden="true" (click)="updateActivity(activity)"></i>
+                            </h4>
+    
+                            <p class="ml-2 mt-2 ">{{ activity.description }}</p>
+    
+                        </div>
+                    </div>
+    
+                        <form formGroup="activityForm" (ngSubmit)="updateActivity()" class="form update-form">
+                            <div class="form-group">
+                                <input type="text" id="title" placeholder="Nome da Task" id="title" required>
+                            </div>
+                            <div class="form-group">
+                                <textarea rows="4" cols="20" id="description" placeholder="Descrição" id="description"></textarea>
+                            </div>
+                            <button type="submit" [disabled]="activityForm.invalid" class="btn btn-success">Atualizar</button>
+    
+                        </form>
+
+    
+                </div>
+            </div>
+    
+    </div>
